@@ -8,6 +8,32 @@ Most recent revision: 4/21/20
 <html>
    <head>
       <title>Tia’s Portfolio</title>
+      <style>
+         caption {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+         }
+         table, th, td {
+            border: 1px solid #0d1f2d;
+            border-collapse: collapse;
+            padding: 5px 10px;
+         }
+         table {
+            width: 90%;
+            margin: auto;
+         }
+         tr {
+            height: 30px;
+         }
+         th {
+            background-color: #546a7b; 
+            color: #f2eded;
+         }
+         tr:nth-child(odd) {
+            background-color: #e4c3ad; 
+         }
+      </style>
    </head>
    <body>
       <header>
@@ -36,21 +62,25 @@ Most recent revision: 4/21/20
             <img src="images/experience-400.jpg" alt="experience word blob" />
             <table>
                <caption>Employment History</caption>
-               <tr>
-                  <th>Years</th>
-                  <th>Title</th>
-                  <th>Company</th>
-               </tr>
-               <tr>
-                  <td>3</td>
-                  <td>Software Engineer</td>
-                  <td>Private Company</td>
-               </tr>
-               <tr>
-                  <td>2</td>
-                  <td>IT Specialist</td>
-                  <td>Private Company</td>
-               </tr>
+               <thead>
+                  <tr>
+                     <th>Years</th>
+                     <th>Title</th>
+                     <th>Company</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>3</td>
+                     <td>Software Engineer</td>
+                     <td>Private Company</td>
+                  </tr>
+                  <tr>
+                     <td>2</td>
+                     <td>IT Specialist</td>
+                     <td>Private Company</td>
+                  </tr>
+               </tbody>
             </table>
          </article>
 
