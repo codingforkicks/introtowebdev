@@ -1,0 +1,14 @@
+@import "main.css";
+
+.clear-float {
+   clear:both;
+}
+article img {
+   float:left;
+}
+.right-content {
+   float:left;
+}
+article {
+   margin-bottom: 16px;
+}
