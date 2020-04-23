@@ -8,7 +8,7 @@ Most recent revision: 4/23/20
    <head>
       <title>Contact</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-      <link href="style/restaurantStyles.css" rel="stylesheet" type="text/css" />
+      <link href="style/contact-form.css" rel="stylesheet" type="text/css" />
    </head>
    <body>
       <header>
@@ -21,55 +21,72 @@ Most recent revision: 4/23/20
          <a class="nav-link active" href="contact.html">Contact</a>
       </nav>
 
-      <form action="submit.html" method="POST">
-         <!--name email phone boxes-->
-         <label for="name">Name:</label>
-         <input type="text" id="name" name="name" /><br/><br/>
-         <label for="email">Email:</label>
-         <input type="text" id="email" name="email" /><br/><br/>
-         <label for="phone">Phone:</label>
-         <input type="text" id="phone" name="phone" /><br/><br/>
-         <!--drop down-->
-         <label for="reason">Reason for Inquiry:</label>
-         <select id="reason" name="reason">
-            <option value="default" selected>Catering</option>
-            <option value="private">Private Party</option>
-            <option value="Feedback">Feedback</option value="Other">
-            <option>Other</option>
-         </select>
-         <br/><br/>
+      <section class="container">
+         <form action="submit.html" method="POST">
+            <!--name email phone boxes-->
+            <div class="form-group">
+               <label for="name">Name:</label>
+               <input type="text" class="form-control" id="name" name="name" required/>
+            </div>
+            <div class="form-group">
+               <label for="email">Email:</label>
+               <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" />
+            </div>
+            <div class="form-group">
+               <label for="phone">Phone:</label>
+               <input type="phone" class="form-control" id="phone" name="phone" />
+            </div>
+            
+            <!--drop down-->
+            <div class="form-group">
+               <label for="reason">Reason for Inquiry:</label>
+               <select class="form-control" id="reason" name="reason">
+                  <option value="default" selected>Catering</option>
+                  <option value="private">Private Party</option>
+                  <option value="Feedback">Feedback</option value="Other">
+                  <option>Other</option>
+               </select>
+            </div>
 
-         <!--additional info textbox-->
-         <label for="info">Additional Information: </label>
-         <textarea id="info" name="info" spellcheck="true" style="resize: none; vertical-align: top;"></textarea>
-         <br/><br/>
+            <!--additional info textbox-->
+            <div class="form-group">
+               <label for="info">Additional Information: </label>
+               <textarea class="form-control" id="info" name="info" spellcheck="true" style="resize: none; vertical-align: top;"></textarea>
+            </div>
 
-         <!--radio button-->
-         <label for="returning-guest">Have you been to the restaurant?</label>
-         <input type="radio" id="option1" name="returning-guest" value="no" />
-         <label for="option1">No</label>
-         <input type="radio" id="option2" name="returning-guest" value="yes" />
-         <label for="option2">Yes</label>
-         <br/><br/>
+            <!--radio button-->
+            <div class="form-group form-check form-check-inline">
+               <label class="form-check-label" for="returning-guest">Have you been to the restaurant? &nbsp</label>
+               <input class="form-check-input" type="radio" class="form-control" id="option1" name="returning-guest" value="no" />
+               <label class="form-check-label" for="option1">No</label>
+            </div>
+            <div class="form-check form-check-inline">
+               <input class="form-check-input" type="radio" class="form-control" id="option2" name="returning-guest" value="yes" />
+               <label class="form-check-label" for="option2">Yes</label>
+            </div>
 
-         <!--contact day checkbox-->
-         <label for="contact">Best days to contact you:</label>
-         <input type="checkbox" id="mon" name="contact" value="mon"/>
-         <label for="mon">M</label>
-         <input type="checkbox" id="tues" name="contact" value="tues"/>
-         <label for="tues">T</label>
-         <input type="checkbox" id="wed" name="contact" value="wed"/>
-         <label for="wed">W</label>
-         <input type="checkbox" id="thurs" name="contact" value="thurs"/>
-         <label for="thurs">Th</label>
-         <input type="checkbox" id="fri" name="contact" value="fri"/>
-         <label for="fri">F</label>
-         <br/><br/>
+            <!--contact day checkbox-->
+            <div class="form-check form-check-inline">
+               <label class="form-check-label" for="contact">Best days to contact you: &nbsp</label>
+               <input class="form-check-input" type="checkbox" id="mon" name="contact" value="mon"/>
+               <label class="form-check-label" for="mon">M&nbsp</label>
+               <input class="form-check-input" type="checkbox" id="tues" class="form-control" name="contact" value="tues"/>
+               <label class="form-check-label" for="tues">T&nbsp</label>
+               <input class="form-check-input" type="checkbox" class="form-control" id="wed" name="contact" value="wed"/>
+               <label class="form-check-label" for="wed">W&nbsp</label>
+               <input class="form-check-input" type="checkbox" class="form-control" id="thurs" name="contact" value="thurs"/>
+               <label class="form-check-label" for="thurs">Th&nbsp</label>
+               <input class="form-check-input" type="checkbox" class="form-control" id="fri" name="contact" value="fri"/>
+               <label class="form-check-label" for="fri">F&nbsp</label>
+            </div>
 
-         <!--submit button-->
-         <input type="submit" name="submit" value="Send Request">
-      </form>
-      
+            <!--submit button-->
+            <div class="form-group">
+               <button type="submit" class="btn btn-primary" name="submit">Send Request</button>
+            <div>
+         </form>
+      </section>
+
       <hr />
       <footer>
          <p>9108 Good Eating Drive, Gainesville NC, 27835</p>
