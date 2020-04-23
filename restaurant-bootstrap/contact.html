@@ -24,21 +24,21 @@ Most recent revision: 4/23/20
       <section class="container">
          <form action="submit.html" method="POST">
             <!--name email phone boxes-->
-            <div class="form-group">
+            <div class="form-group required">
                <label for="name">Name:</label>
                <input type="text" class="form-control" id="name" name="name" required/>
             </div>
-            <div class="form-group">
+            <div class="form-group required">
                <label for="email">Email:</label>
                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" />
             </div>
-            <div class="form-group">
+            <div class="form-group required">
                <label for="phone">Phone:</label>
                <input type="phone" class="form-control" id="phone" name="phone" />
             </div>
             
             <!--drop down-->
-            <div class="form-group">
+            <div class="form-group required">
                <label for="reason">Reason for Inquiry:</label>
                <select class="form-control" id="reason" name="reason">
                   <option value="default" selected>Catering</option>
@@ -67,7 +67,7 @@ Most recent revision: 4/23/20
 
             <!--contact day checkbox-->
             <div class="form-check form-check-inline">
-               <label class="form-check-label" for="contact">Best days to contact you: &nbsp</label>
+               <label class="form-check-label required" for="contact">Best days to contact you: &nbsp</label>
                <input class="form-check-input" type="checkbox" id="mon" name="contact" value="mon"/>
                <label class="form-check-label" for="mon">M&nbsp</label>
                <input class="form-check-input" type="checkbox" id="tues" class="form-control" name="contact" value="tues"/>
