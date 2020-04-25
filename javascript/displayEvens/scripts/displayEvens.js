@@ -20,7 +20,9 @@ function evenNumbers(start, end, increment){
       };
       current += increment;
    };
-   return arr;
+   if(arr.length > 0) {
+      return arr;
+   }
 };
 
 // Function's purpose - clear previous contents
@@ -39,6 +41,8 @@ function validateForm() {
    let start = document.getElementById("start").value;
    let end = document.getElementById("end").value;
    let step = document.getElementById("step").value;
+   let results = evenNumbers(Number(start), Number(end), Number(step));
+
    if (start == "" || isNaN(start) || Number(start) < 0) {
       alert("Starting number must be a positive number.");
       document.forms["formContent"]["start"]
@@ -60,18 +64,21 @@ function validateForm() {
       document.forms["formContent"]["step"].focus();
       return false;
    };
+   
+   if (results == !undefined) {
+      document.getElementsByClassName("results")[0].style.display = "block";
+      document.getElementById("results").style.display = "block";
+      document.getElementById("submitButton").innerText = "Recalculate";
+      document.getElementById("numStart").innerText = start;
+      document.getElementById("numEnd").innerText = end;
+      document.getElementById("numStep").innerText = step;
 
-   document.getElementsByClassName("results")[0].style.display = "block";
-   document.getElementById("results").style.display = "block";
-   document.getElementById("submitButton").innerText = "Recalculate";
-   document.getElementById("numStart").innerText = start;
-   document.getElementById("numEnd").innerText = end;
-   document.getElementById("numStep").innerText = step;
-
-   results = evenNumbers(Number(start), Number(end), Number(step));
-   console.log(results);
-   console.log(typeof results);
-   document.getElementById("evens").innerText = results
+      console.log(results);
+      console.log(typeof results);
+      document.getElementById("evens").innerText = results
+   } else {
+      alert(`There are no even numbers between ${start} and ${end} with ${step} steps`);
+   };
 
    // We are returning false so that the form doesn't submit 
    // and so that we can see the results
