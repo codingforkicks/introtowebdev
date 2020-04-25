@@ -30,11 +30,9 @@ function resetForm() {
 // Input - none
 // Output - none
 function validateForm() {
-   console.log("working");
    clearErrors();
    let num1 = document.forms["numberFun"]["num1"].value;
    let num2 = document.forms["numberFun"]["num2"].value;
-   console.log(`num1: ${num1}, num2: ${num2}`);
    if (num1 == "" || isNaN(num1)) {
       alert("Num1 must be filled in with a number.");
       document.forms["numberFun"]["num1"]
@@ -50,7 +48,6 @@ function validateForm() {
       return false;
    }
    document.getElementById("results").style.display = "block";
-   console.log("display change");
    document.getElementById("submitButton").innerText = "Recalculate";
    document.getElementById("addResult").innerText = Number(num1) +
                                                    Number(num2);
