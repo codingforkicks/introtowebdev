@@ -25,25 +25,25 @@ Most recent revision: 4/23/20
       </nav>
 
       <section class="container">
-         <form action="submit.html" method="POST">
+         <form>
             <!--name email phone boxes-->
             <div class="form-group required">
                <label for="name">Name:</label>
                <input type="text" class="form-control" id="name" name="name" required/>
             </div>
-            <div class="form-group required">
+            <div class="form-group required" required>
                <label for="email">Email:</label>
-               <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" />
+               <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required/>
             </div>
-            <div class="form-group required">
+            <div class="form-group required" required>
                <label for="phone">Phone:</label>
-               <input type="phone" class="form-control" id="phone" name="phone" />
+               <input type="phone" class="form-control" id="phone" name="phone" required/>
             </div>
             
             <!--drop down-->
-            <div class="form-group required">
+            <div class="form-group required" required>
                <label for="reason">Reason for Inquiry:</label>
-               <select class="form-control" id="reason" name="reason">
+               <select class="form-control" id="reason" name="reason" required>
                   <option value="default" selected>Catering</option>
                   <option value="private">Private Party</option>
                   <option value="Feedback">Feedback</option value="Other">
