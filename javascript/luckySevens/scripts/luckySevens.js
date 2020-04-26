@@ -86,7 +86,6 @@ function getBet() {
 };
 
 function add(x, y){
-   console.log(`dice roll: ${x} + ${y} total ${x+y}`)
    return Number(x) + Number(y);
 };
 
@@ -100,8 +99,12 @@ function rollDice(numSides) {
 };
 
 // display stats when game over;
-function displayStats(bank, winnings, numOfRoles, rollCountAtHighest) {
-
+function displayStats(starting, totalRolls, highestWon, rollCountAtHighest) {
+   document.getElementById("startingBet").innerText = formatCurrency(starting.toString());
+   document.getElementById("numOfRolls").innerText = totalRolls;
+   document.getElementById("highestWon").innerText = formatCurrency(highestWon.toString());
+   document.getElementById("rollCountAtHighest").innerText = rollCountAtHighest;
+   document.getElementById("results").style.display = "block";
 };
 
 // game play on button click
@@ -112,11 +115,14 @@ function playGame() {
    
    //values to track table data
    let currentBank = startingBank;
-   let numOfRoles = 0;
+   let numOfRolls = 0;
    let rollCountAtHighest = 0;
    let highestWinnings = 0;
 
-   while((numOfRoles < 50) && (currentBank > 0)){
+   while((numOfRolls < 50) && (currentBank > 0)){
+      if(currentBank < 0){
+         break;
+      }
       if(rollDice(6)){
          currentBank += 7.0;
       } else{
@@ -124,18 +130,10 @@ function playGame() {
       }
       if (currentBank > highestWinnings) {
          highestWinnings = currentBank;
-         rollCountAtHighest = numOfRoles;
+         rollCountAtHighest = numOfRolls;
       }
-      numOfRoles++;
+      numOfRolls++;
    }
    document.getElementById("bank").innerText = "$0.00";
-
-   
-   console.log(`Game Over: \n
-               Current Bank: ${currentBank}
-               Starting Bank: ${startingBank}
-               Num of rolls: ${numOfRoles}
-               highest Winnings: ${highestWinnings}
-               Roll Count at highest: ${rollCountAtHighest}
-               `)
+   displayStats(startingBank, numOfRolls, highestWinnings, rollCountAtHighest);
 };
