@@ -36,4 +36,6 @@ nav a:visited {
 }
 .container {
    background-color: #f5f5f5;
+   margin: auto; 
+   padding: 2% 0%; 
 }
